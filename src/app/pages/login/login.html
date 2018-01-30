@@ -1,0 +1,35 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons>
+            <button ion-button (click)="viewCtrl.dismiss(false)">
+              Cerrar
+          </button>
+        </ion-buttons>
+        <ion-title>Inicia sesión</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label floating>Correo Electronico</ion-label>
+            <ion-input type="email" [(ngModel)]="correo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <button ion-button block [disabled]="correo.length < 5 || contrasena.length < 5" (click)="ingresar()">
+      Iniciar sesión
+    </button>
+
+</ion-content>
